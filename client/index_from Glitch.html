@@ -1,0 +1,55 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Server-hosted chat</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Make a chat box and buttons</h1>
+    </header>
+
+    <main>
+      
+      <div class="rps-wrapper">
+      <ul id="events"></ul>
+        
+      <div class="button-wrapper">
+  
+      <form id="chat-form">
+        <label>
+          New Message
+          <input id="chat" name="dream" type="text" maxlength="100" required placeholder="Chat Here!">
+        </label>
+        <button id="say" type="submit" id="submit-dream">Add / Send</button>
+      </form>
+        
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
+    </div>
+
+      <section class="dreams">
+        <ul id="dreams">
+          <em>loading dreams&hellip;</em>
+        </ul>
+      </section>
+    </main>
+
+    <footer>Made by Greg!</footer>
+
+  </body>
+</html>
