@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-const socketio = require('socket.io');
+const socketio = require('socket.io').listen(server);
 
 const RpsGame = require('./rps-game');
 
@@ -13,7 +13,7 @@ app.use(express.static(clientPath));
 
 const server = http.createServer(app);
 
-const io = socketio(server);
+const io = socketio(server);+
 
 let waitingPlayer = null;
 
