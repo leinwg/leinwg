@@ -1,5 +1,6 @@
 const http = require('http');
 const express = require('express');
+var server = =app.listen(8080)
 const socketio = require('socket.io').listen(server);
 
 const RpsGame = require('./rps-game');
@@ -11,7 +12,7 @@ console.log(`Serving static from ${clientPath}`);
 
 app.use(express.static(clientPath));
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 const io = socketio(server);+
 
