@@ -1,9 +1,9 @@
 const http = require('http');
-const express = require('express');
-const app = express();
-var server = =app.listen(8080)
-let port=Number(process.env.PORT || 8080);
+let express = require('express');
+let app = express();
+let port=Number(process.env.PORT || 3000);
 let server = app.listen(port);
+
 var io = require('socket.io').listen(server);
 
 const RpsGame = require('./rps-game');
