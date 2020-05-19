@@ -1,13 +1,12 @@
 const http = require('http');
 const express = require('express');
-//var server = =app.listen(8080)
+const app = express();
+var server = =app.listen(8080)
 let port=Number(process.env.PORT || 8080);
 let server = app.listen(port);
-//var io = require('socket.io').listen(server);
+var io = require('socket.io').listen(server);
 
 const RpsGame = require('./rps-game');
-
-const app = express();
 
 const clientPath = `${__dirname}/../client`;
 console.log(`Serving static from ${clientPath}`);
