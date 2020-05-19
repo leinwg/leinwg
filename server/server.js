@@ -1,7 +1,9 @@
 const http = require('http');
 const express = require('express');
-var server = =app.listen(8080)
-var io = require('socket.io').listen(server);
+//var server = =app.listen(8080)
+let port=Number(process.env.PORT || 8080);
+let server = app.listen(port);
+//var io = require('socket.io').listen(server);
 
 const RpsGame = require('./rps-game');
 
@@ -11,14 +13,21 @@ const clientPath = `${__dirname}/../client`;
 console.log(`Serving static from ${clientPath}`);
 
 app.use(express.static(clientPath));
+console.log("My socket server is running on port " + port);
 
 // const server = http.createServer(app);
 
 // const io = socketio(server);+
 
+// Start socket.io
+let socket = require('socket.io');
+
+// Connect it to the web server
+let io = socket(server);
+
 let waitingPlayer = null;
 
-io.on('connection', (sock) => {
+io.sockets.on('connection', (sock) => {
 
   if (waitingPlayer) {
     new RpsGame(waitingPlayer, sock);
